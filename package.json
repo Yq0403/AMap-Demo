@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "author": "yuquan <2376176474@qq.com>",
+  "scripts": {
+    "dev": "umi dev",
+    "build": "umi build",
+    "format": "prettier --check --write .",
+    "postinstall": "umi setup",
+    "setup": "umi setup",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "@amap/amap-jsapi-loader": "^1.0.1",
+    "antd": "^5.10.0",
+    "axios": "^1.5.1",
+    "react-bmapgl": "^0.2.26",
+    "umi": "^4.0.83"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.11",
+    "prettier": "^3.0.3",
+    "typescript": "^5.0.3"
+  }
+}
