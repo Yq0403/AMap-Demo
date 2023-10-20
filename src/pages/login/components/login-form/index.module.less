@@ -1,0 +1,35 @@
+.submit_button {
+  width: 100%;
+  margin-top: 32px;
+  color: #fff;
+  background-color: #42b9e4;
+  border-color: #42b9e4;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: #01afc9;
+    border-color: #01afc9;
+  }
+}
+
+.input {
+  padding: 8px 10px 8px 14px;
+
+  :global(input.ant-input) {
+    // 解决回填后带背景色问题
+    background-clip: content-box;
+    height: 0;
+    padding: 10px 0;
+  }
+
+  :global(.ant-input-prefix > .ant-image) {
+    line-height: 12px;
+  }
+}
+
+.img {
+  padding-right: 4px;
+  height: 5px;
+}

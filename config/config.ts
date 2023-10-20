@@ -7,5 +7,5 @@ import routes from "./routes";
 export default defineConfig({
   hash: true,
   routes,
-  // outputPath: path.resolve("../../output/build/dist"),
+  base: "/",
 });
