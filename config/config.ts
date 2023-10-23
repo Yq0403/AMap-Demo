@@ -5,7 +5,12 @@ import { defineConfig } from "umi";
 import routes from "./routes";
 
 export default defineConfig({
-  hash: true,
   routes,
-  base: "/",
+  proxy: {
+    "/api": {
+      target: process.env.AMAP_API,
+      changeOrigin: true,
+      pathRewrite: { "^/api": "" },
+    },
+  },
 });

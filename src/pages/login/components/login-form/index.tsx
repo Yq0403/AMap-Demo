@@ -1,10 +1,10 @@
 import { useNavigate } from "umi";
-import { Button, Form, Input, Image, Alert } from "antd";
+import { Button, Form, Input, Alert } from "antd";
 import { useState } from "react";
 
+import { login } from "@/api";
+
 import styles from "./index.module.less";
-import user from "../../images/user.png";
-import password from "../../images/password.png";
 
 function LoginForm() {
   const [error, setError] = useState<string>("");
@@ -12,12 +12,16 @@ function LoginForm() {
   const navigate = useNavigate();
 
   const handleSubmit = ({ username, password }: any) => {
-    if (username === "admin" && password === "123456") {
-      navigate("/");
-    } else {
-      setError("用户名或密码错误");
-    }
+    login(username, password)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((err) => {
+        if (err.response?.status === 401) setError("用户名或密码错误");
+        else setError("服务器错误");
+      });
   };
+
   return (
     <Form labelCol={{ span: 4 }} colon={false} onFinish={handleSubmit}>
       <Form.Item

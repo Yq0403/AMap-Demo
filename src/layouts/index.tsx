@@ -14,5 +14,9 @@ export default function Layout() {
     }
   }, []);
 
-  return <Outlet />;
+  return (
+    <div className="layout">
+      <Outlet />
+    </div>
+  );
 }
